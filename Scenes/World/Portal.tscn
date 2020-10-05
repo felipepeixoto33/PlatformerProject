@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/World/TileMap3.gd" type="Script" id=1]
+[ext_resource path="res://Assets/World/FreeCuteTileset/Tileset.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "Tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 80, 48, 48, 32 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 2
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 63, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="TileMap3" type="TileMap"]
+tile_set = SubResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -589715, 0, 0, -589714, 0, 1, -589713, 0, 1, -589712, 0, 1, -589711, 0, 1, -589710, 0, 1, -589709, 0, 1, -589708, 0, 1, -589707, 0, 1, -589706, 0, 1, -589705, 0, 1, -589704, 0, 1, -589703, 0, 1, -589702, 0, 1, -589701, 0, 1, -589700, 0, 1, -589699, 0, 1, -589698, 0, 1, -589697, 0, 1, -589696, 0, 1, -589695, 0, 1, -589694, 0, 2, -524179, 0, 0, -524178, 0, 0, -524177, 0, 0, -524176, 0, 65537, -524175, 0, 65537, -524174, 0, 65537, -524173, 0, 65537, -524172, 0, 65537, -524171, 0, 65537, -524170, 0, 65537, -524169, 0, 65537, -524168, 0, 65537, -524167, 0, 65537, -524166, 0, 65537, -524165, 0, 65537, -524164, 0, 65537, -524163, 0, 65537, -524162, 0, 65537, -524161, 0, 65537, -524160, 0, 0, -524159, 0, 0, -524158, 0, 0, -458643, 0, 0, -458642, 0, 0, -458623, 0, 0, -458622, 0, 0, -393107, 0, 0, -393106, 0, 0, -393087, 0, 0, -393086, 0, 0, -327571, 0, 0, -327570, 0, 0, -327551, 0, 0, -327550, 0, 0, -262035, 0, 0, -262034, 0, 0, -262015, 0, 0, -262014, 0, 0, -196499, 0, 0, -196498, 0, 0, -196479, 0, 0, -196478, 0, 0, -130963, 0, 0, -130962, 0, 0, -130943, 0, 0, -130942, 0, 0, -65427, 0, 0, -65426, 0, 0, -65407, 0, 0, -65406, 0, 0, 109, 0, 0, 110, 0, 0, 129, 0, 0, 130, 0, 0, 65645, 0, 0, 65646, 0, 0, 65665, 0, 0, 65666, 0, 0, 131181, 0, 0, 131182, 0, 0, 131201, 0, 0, 131202, 0, 0, 196717, 0, 0, 196718, 0, 0, 196737, 0, 0, 196738, 0, 0, 262253, 0, 0, 262254, 0, 0, 262273, 0, 0, 262274, 0, 0, 327789, 0, 65536, 327790, 0, 65538, 327809, 0, 65536, 327810, 0, 65538 )
+script = ExtResource( 1 )

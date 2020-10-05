@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/12-Axelonghit 4-consolidated.wav-e510ed313ebd1528f792d183f218e978.sample"
+
+[deps]
+
+source_file="res://Assets/Songs/Player/Sword/12-Axelonghit 4-consolidated.wav"
+dest_files=[ "res://.import/12-Axelonghit 4-consolidated.wav-e510ed313ebd1528f792d183f218e978.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

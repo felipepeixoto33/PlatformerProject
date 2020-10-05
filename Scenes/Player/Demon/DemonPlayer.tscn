@@ -1,0 +1,317 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scenes/Overlap/Stats.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Overlap/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Player/Demon/Axe Demon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Player/Demon/DemonPlayer.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Player/Human/SwordHitBox.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/UI/HealthUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Songs/Player/Sword/06-AxeHit2-consolidated.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Songs/Player/Dying/01-PlayerDemonDeathSound-consolidated.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Songs/Player/Sword/05-AxeHit1-consolidated.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Songs/Player/Sword/08-Axehit4-consolidated.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Songs/Player/Sword/07-AxeHit3-consolidated.wav" type="AudioStream" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Attack1"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AxeHitbox/Attack1Collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Attack2"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 9, 10, 11, 12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AxeHitbox/Attack2Collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Die"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Songs/Die:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.061082 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Fall"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 26, 27 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 33 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 26, 27, 28, 29, 30, 31 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 35, 36, 37, 38, 39, 40 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Stand Up"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 41, 42, 43, 44, 45 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Stunned"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 46, 47, 48, 49, 50, 51 ]
+}
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 18.5786 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 8.17599, 17.6796 )
+
+[node name="DemonPlayer" type="KinematicBody2D" groups=[
+"Player",
+]]
+script = ExtResource( 4 )
+
+[node name="Stats" parent="." instance=ExtResource( 1 )]
+max_health = 20
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+hframes = 53
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack1 = SubResource( 1 )
+anims/Attack2 = SubResource( 2 )
+anims/Die = SubResource( 3 )
+anims/Fall = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Jump = SubResource( 6 )
+anims/Run = SubResource( 7 )
+"anims/Stand Up" = SubResource( 8 )
+anims/Stunned = SubResource( 9 )
+anims/Walk = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -1.2011, 13.5117 )
+shape = SubResource( 11 )
+
+[node name="AxeHitbox" type="Area2D" parent="." groups=[
+"hitbox",
+]]
+position = Vector2( 17.4388, -1.66083 )
+collision_layer = 0
+collision_mask = 16
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Attack1Collision" type="CollisionPolygon2D" parent="AxeHitbox"]
+polygon = PoolVector2Array( -51.66, -6.04124, -30.3149, -9.73052, -10.4996, -9.15861, 10.0037, -2.879, 16.3281, 5.81717, 11.8483, 16.0944, 1.04398, 22.1554, -7.65218, 21.8919, -8.17922, 31.1151, -0.273617, 30.5881, 19.2269, 23.2095, 28.4501, 8.45237, 28.7136, 0.283244, 22.6526, -7.88588, 4.46975, -16.8456, -16.0848, -17.6361, -35.8488, -15.528, -46.3896, -11.5752 )
+disabled = true
+
+[node name="Attack2Collision" type="CollisionPolygon2D" parent="AxeHitbox"]
+polygon = PoolVector2Array( -55.3493, -1.5614, -21.8823, 0.810286, 3.94271, 5.02661, 13.1659, 9.24293, -1.85474, 16.6215, -15.0307, 17.1485, -23.9904, 22.1554, -13.9767, 20.8378, 1.57103, 19.7837, 16.5917, 17.1485, 25.0243, 8.97941, 15.2741, 1.60084, 1.30751, -2.35196, -33.4772, -4.1966 )
+disabled = true
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -0.993358, 14.725 )
+shape = SubResource( 12 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="attackDelay" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="HealthUI" parent="." instance=ExtResource( 6 )]
+margin_left = -223.823
+margin_top = -130.856
+margin_right = -223.823
+margin_bottom = -130.856
+
+[node name="Songs" type="Node" parent="."]
+
+[node name="Die" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource( 8 )
+volume_db = -13.433
+
+[node name="AxeHit1" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource( 9 )
+volume_db = -23.223
+
+[node name="AxeHit2" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource( 7 )
+volume_db = -23.223
+
+[node name="AxeHit3" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource( 11 )
+volume_db = -23.223
+
+[node name="AxeHit4" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource( 10 )
+volume_db = -23.223
+[connection signal="health_changed" from="Stats" to="." method="_on_Stats_health_changed"]
+[connection signal="health_changed" from="Stats" to="HealthUI" method="_on_Stats_health_changed"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="AxeHitbox" to="Hurtbox" method="_on_AxeHitbox_area_entered"]
+[connection signal="attacked" from="Hurtbox" to="." method="_on_Hurtbox_attacked"]
+[connection signal="attacked" from="Hurtbox" to="Stats" method="_on_Hurtbox_attacked"]
+[connection signal="stun" from="Hurtbox" to="." method="_on_Hurtbox_stun"]
+[connection signal="timeout" from="attackDelay" to="." method="_on_attackDelay_timeout"]
+
+[editable path="Hurtbox"]

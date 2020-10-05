@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/UI/ShieldBar.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/HealthUI.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 20.1772, 3.98756, 25.161, 34.0408 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 56, 25, 34 )
+
+[node name="HealthUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthUnder" type="TextureProgress" parent="."]
+margin_left = -1.0
+margin_right = 39.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.5, 1.5 )
+value = 100.0
+texture_under = SubResource( 1 )
+texture_progress = SubResource( 2 )
+fill_mode = 3
+tint_under = Color( 0, 0, 0, 1 )
+tint_over = Color( 0.00784314, 0.00392157, 0.00392157, 1 )
+tint_progress = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthOver" type="TextureProgress" parent="."]
+margin_left = -1.0
+margin_right = 39.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.5, 1.5 )
+value = 100.0
+texture_under = SubResource( 1 )
+texture_progress = SubResource( 2 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateTween" type="Tween" parent="."]

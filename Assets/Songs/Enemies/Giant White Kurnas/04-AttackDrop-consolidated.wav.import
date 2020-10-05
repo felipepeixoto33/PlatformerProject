@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/04-AttackDrop-consolidated.wav-55410115e7834307ad632c7e2f9e0e43.sample"
+
+[deps]
+
+source_file="res://Assets/Songs/Enemies/Giant White Kurnas/04-AttackDrop-consolidated.wav"
+dest_files=[ "res://.import/04-AttackDrop-consolidated.wav-55410115e7834307ad632c7e2f9e0e43.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
